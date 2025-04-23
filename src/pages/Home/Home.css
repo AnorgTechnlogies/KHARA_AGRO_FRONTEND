@@ -1,0 +1,61 @@
+.AmazonPage-container {
+  margin-top: 40px;
+  margin-bottom: 70px;
+  min-height: 40vh;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #d6ffd6, #b3b3b3);
+}
+
+.AmazonPage-header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 16px;
+  text-align: center;
+}
+
+.AmazonPage-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+.AmazonPage-subtitle {
+  font-size: 1.25rem;
+  color: #666;
+  margin-bottom: 32px;
+}
+
+.AmazonPage-amazon-button {
+  display: inline-flex;
+  align-items: center;
+  background-color: #FFD814;
+  color: #111;
+  font-weight: bold;
+  padding: 12px 32px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.AmazonPage-amazon-button:hover {
+  background-color: #F7CA00;
+  transform: scale(1.05);
+}
+
+.AmazonPage-button-icon {
+  margin-right: 8px;
+}
+
+
+@media (max-width: 768px) {
+  .AmazonPage-title {
+    font-size: 2rem;
+  }
+  
+  .AmazonPage-subtitle {
+    font-size: 1.125rem;
+  }
+}
