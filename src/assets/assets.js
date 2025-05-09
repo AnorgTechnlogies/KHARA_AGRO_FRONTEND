@@ -101,7 +101,7 @@ export const menu_list = [
         menu_image: menu_21
     },
     {
-        menu_name: "Flattened Rice",
+        menu_name: "Poha",
         menu_image: menu_31
     },
     // {
