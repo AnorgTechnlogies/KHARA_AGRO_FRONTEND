@@ -14,28 +14,32 @@ const AboutUs = () => {
             <div className="about-section">
               <h2 className="about-section-title">Our Story</h2>
               <p className="about-text">
-                Welcome to our journey of bringing the finest quality products
-                to your table. Our commitment to excellence and authentic taste
-                has been our driving force.
+                Welcome to Khara AgroTech, where tradition meets technology in
+                the heart of Indian agriculture. Our journey began with a simple
+                goal — to deliver farm-fresh, pure, and high-quality agro
+                products to homes across Maharashtra and PAN India.
               </p>
             </div>
 
             <div className="about-section">
               <h2 className="about-section-title">Our Mission</h2>
               <p className="about-text">
-                We strive to provide the healthiest and most authentic products
-                while maintaining the highest standards of quality and customer
-                satisfaction.
+                 Khara AgroTech, our mission is to provide the healthiest and
+                most authentic agro products online. We support sustainable
+                agriculture, promote ethical farming, and ensure farm-to-fork
+                freshness in every delivery. Our goal is to bring natural,
+                chemical-free grains and pulses to Indian homes for a healthier
+                lifestyle.
               </p>
             </div>
 
             <div className="about-section">
               <h2 className="about-section-title">Our Values</h2>
               <p className="about-text">
-                Quality, Authenticity, and Customer Trust form the cornerstone
-                of our business. Every product we offer is carefully selected
-                and quality-tested to ensure the best experience for our
-                customers.
+                 Khara AgroTech, we prioritize quality, authenticity, and
+                customer trust through fresh, unadulterated agro products. Our
+                transparent sourcing and reliable service support a healthier
+                and more sustainable lifestyle.
               </p>
             </div>
           </div>

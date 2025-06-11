@@ -8,7 +8,7 @@
     font-weight: 500;
 }
 .explore-menu-text{
-    max-width: 60%;
+    max-width: 100%;
     color: #808080;
 }
 .explore-menu-list{
@@ -29,6 +29,7 @@
     cursor: pointer;
     border-radius: 10%;
     transition: 0.2s;
+  align-self: auto;
 }
 .explore-menu-list-item .active{
     border: 4px solid tomato;
@@ -55,4 +56,24 @@
         max-width: 100%;
         font-size: 14px;
     }
+}
+.home-discription h1{
+text-align: center;
+margin-top: 20px;
+}
+.home-discription p {
+    margin: 20px;
+  text-align: center;
+   color: #808080;
+   margin-bottom: 50px;
+  
+}
+.red-color{
+    color: rgb(225, 56, 56);
+}
+.explore-menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center all items in the container */
+  gap: 20px; /* Optional spacing */
 }

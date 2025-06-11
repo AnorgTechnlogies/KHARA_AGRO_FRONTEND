@@ -1,5 +1,6 @@
 .food-display{
     margin-top: 30px;
+  
 }
 .food-display h2{
     font-size: max(2vw,24px);
@@ -18,4 +19,10 @@
     height: 3px;
     background-color: #e2e2e2a3;
     border: none;
+  }
+  .loading-food{
+    text-align: center;
+    font-size: 30px;
+    text-decoration: solid;
+    color: rgb(180, 23, 23)
   }
