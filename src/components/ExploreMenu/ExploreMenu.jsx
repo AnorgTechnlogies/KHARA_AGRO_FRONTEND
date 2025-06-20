@@ -11,21 +11,12 @@ const ExploreMenu = ({ category, setCategory }) => {
         <h1>
           Welcome to <span className="red-color">Khara AgroTech</span>
         </h1>
-        <p>
-          <strong>Your Trusted Online Agro Store in India</strong> — Khara
-          AgroTech is your one-stop destination to buy organic rice, pulses, and
-          grains online. We bring you premium-quality agro products sourced
-          directly from Indian farmers, delivered fresh to your doorstep.
-          Whether you're looking for Idli Rice, Biryani Rice, Chana Dal, Urad
-          Dal, or Thick Poha, we ensure top-notch quality, hygienic packaging,
-          and affordable pricing. Our flagship brand <strong>Bhogprada</strong>
-          represents purity, tradition, and trust, offering you the finest agro
-          products with a seamless online shopping experience and 24/7 customer
-          support. We aim to be India’s most reliable AgroTech brand. Experience
-          the best of Indian agriculture with Khara AgroTech and
-          <strong>Bhogprada</strong> – the leading agro product supplier in
-          Gondia and across Maharashtra.
-        </p>
+       <p>
+  <strong>Khara AgroTech</strong> is your trusted <strong>online agro store in India</strong> and the official website for premium <strong>agro products</strong> sourced directly from <strong>Indian farmers</strong>. Based in <strong>Gondia, Maharashtra</strong>, and rooted in the village of <strong>Khara</strong>, Khara AgroTech offers a seamless way to buy fresh, <strong>organic grains and pulses online</strong>. Whether you're searching for <strong>Idli Rice</strong>, <strong>Biryani Rice</strong>, <strong>Chana Dal</strong>, <strong>Urad Dal</strong>, <strong>Besan</strong>, or <strong>Thick Poha</strong>, we guarantee <strong>high-quality products</strong> with hygienic packaging and doorstep delivery at affordable prices.
+
+  Our flagship brand, <strong>Bhogprada</strong>, is known for <strong>purity, tradition, and trust</strong> — offering the <strong>best rice in Balaghat</strong> along with a wide range of authentic agro products across <strong>Maharashtra</strong>. With <strong>24/7 customer support</strong> and a strong focus on quality, Khara AgroTech aims to become <strong>India’s most reliable AgroTech brand</strong>.
+</p>
+
         <h1>Explore our Food Basket</h1>
 
         <p className="explore-menu-text">

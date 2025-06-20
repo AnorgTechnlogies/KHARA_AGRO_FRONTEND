@@ -14,7 +14,7 @@ const AboutUs = () => {
             <div className="about-section">
               <h2 className="about-section-title">Our Story</h2>
               <p className="about-text">
-                Welcome to Khara AgroTech, where tradition meets technology in
+                , where tradition meets technology in
                 the heart of Indian agriculture. Our journey began with a simple
                 goal — to deliver farm-fresh, pure, and high-quality agro
                 products to homes across Maharashtra and PAN India.
