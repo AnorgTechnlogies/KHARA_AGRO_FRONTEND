@@ -17,6 +17,8 @@
       content="Bhogprada, Chinnour rice, Urad dal, Chana dal, Gram flour, Organic food Balaghat, Agro products India, Khara AgroTech"
     />
     <meta name="author" content="Khara AgroTech" />
+    <!-- <meta name="robots" content="index, follow"> -->
+
     <meta
       name="robots"
       content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
@@ -32,7 +34,7 @@
     />
     <meta
       property="og:image"
-      content="https://yourwebsite.com/images/bhogprada-banner.jpg"
+      content="./public/"
     />
     <meta property="og:image:alt" content="Bhogprada organic rice and dal" />
     <meta
@@ -68,29 +70,33 @@
     <link rel="icon" href="./logo.jpeg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
+  
+    
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Bhogprada",
+  "url": "https://kharaagrotech.anorgtechnology.com/",
+  "logo": "https://yourwebsite.com/images/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/bhogprada",
+    "https://www.instagram.com/bhogprada",
+    "https://www.linkedin.com/company/khara-agrotech"
+  ],
+  "description": "Organic agro products brand offering Chinnour rice, dal, and gram flour. Based in Balaghat, Madhya Pradesh.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "RAMCHANDRA BADA, INFRONT OF GRAMPANCHAYAT, Village Khara",
+    "addressLocality": "Kirnapur",
+    "addressRegion": "Madhya Pradesh",
+    "postalCode": "481226",
+    "addressCountry": "India"
+  }
+}
+</script>
 
-    <!-- ✅ Structured Data (JSON-LD for Google Rich Results) -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Bhogprada",
-        "url": "https://kharaagrotech.anorgtechnology.com/",
-        "logo": "https://yourwebsite.com/images/logo.png",
-        "sameAs": [
-          "https://www.facebook.com/bhogprada",
-          "https://www.instagram.com/bhogprada",
-          "https://www.linkedin.com/company/khara-agrotech"
-        ],
-        "description": "Organic agro products brand offering Chinnour rice, dal, and gram flour. Based in Balaghat, Madhya Pradesh.",
-        "address": {
-          "@type": "RAMCHANDRA BADA, INFRONT OF GRAMPANCHAYAT, Village Khara, Tehsil KIRNAPUR, District Balaghat, MADHYA PRADESH, INDIA, Pin 481226",
-          "addressLocality": "Balaghat",
-          "addressRegion": "Madhya Pradesh",
-          "addressCountry": "India"
-        }
-      }
-    </script>
+
   </head>
   <body>
     <div id="root"></div>
