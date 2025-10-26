@@ -26,9 +26,10 @@
 .navbar-menu {
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 45px;
     color: #49557E;
     font-size: 18px;
+   
 }
 
 .navbar-menu .active {
@@ -43,17 +44,54 @@
 }
 
 .navbar-search-icon{
-position: relative;
+    position: relative;
+    display: inline-block;
 }
 
 .navbar-search-icon .dot{
     position: absolute;
-    min-width: 10px;
-    min-height: 10px;
-    background-color: #FF4C24;
-    border-radius: 5px;
     top: -8px;
     right: -8px;
+    color: white;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: colorBounce 2.5s ease-out infinite;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+@keyframes colorBounce {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+    background-color: #FF0000; /* red */
+  }
+  25% {
+    transform: scale(1.05);
+    opacity: 0.8;
+    background-color: #0000FF; /* blue */
+  }
+  50% {
+    transform: scale(0.9);
+    opacity: 0.9;
+    background-color: #FF0000; /* red */
+  }
+  75% {
+    transform: scale(1.1);
+    opacity: 1;
+    background-color: #0000FF; /* blue */
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    background-color: #FF0000; /* end with red */
+  }
 }
 
 .navbar-right button {
@@ -130,6 +168,14 @@ position: relative;
     .navbar-right button {
         padding: 8px 25px;
     }
+
+    .navbar-search-icon .dot {
+        min-width: 18px;
+        height: 18px;
+        font-size: 11px;
+        top: -7px;
+        right: -7px;
+    }
 }
 
 @media (max-width:900px) {
@@ -154,10 +200,30 @@ position: relative;
         font-size: 15px;
         padding: 7px 20px;
     }
+
+    .navbar-search-icon .dot {
+        min-width: 16px;
+        height: 16px;
+        font-size: 10px;
+        top: -6px;
+        right: -6px;
+    }
 }
 
 @media (max-width:750px) {
     .navbar-menu {
         display: none;
+    }
+
+    .navbar-right {
+        gap: 15px;
+    }
+
+    .navbar-search-icon .dot {
+        min-width: 14px;
+        height: 14px;
+        font-size: 9px;
+        top: -5px;
+        right: -5px;
     }
 }

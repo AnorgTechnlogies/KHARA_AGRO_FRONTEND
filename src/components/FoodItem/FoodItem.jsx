@@ -2,11 +2,26 @@ import React, { useContext, useState } from "react";
 import "./FoodItem.css";
 import { assets } from "../../assets/assets";
 import { StoreContext } from "../../Context/StoreContext";
+import { useNavigate } from "react-router-dom";
 
 const FoodItem = ({ image, name, price, desc, id }) => {
-  const [itemCount, setItemCount] = useState(0);
-  const { cartItems, addToCart, removeFromCart, url, currency } =
-    useContext(StoreContext);
+  const { addToCart, url, currency } = useContext(StoreContext);
+  const navigate = useNavigate();
+  const [showNotification, setShowNotification] = useState(false);
+  const [notificationQuantity, setNotificationQuantity] = useState(0);
+
+  const handleAddToCart = () => {
+    addToCart(id);
+    const newQuantity = notificationQuantity + 1;
+    setNotificationQuantity(newQuantity);
+    setShowNotification(true);
+    // Removed setTimeout to keep notification visible continuously
+  };
+
+  const handleBuyNow = () => {
+    addToCart(id);       // Add item to cart
+    navigate("/cart");   // Redirect to cart page
+  };
 
   return (
     <div className="food-item">
@@ -14,40 +29,45 @@ const FoodItem = ({ image, name, price, desc, id }) => {
         <img
           className="food-item-image"
           src={url + "/images/" + image}
-          alt=""
+          alt={name}
         />
-        {!cartItems[id] ? (
-          <img
-            className="add"
-            onClick={() => addToCart(id)}
-            src={assets.add_icon_white}
-            alt=""
-          />
-        ) : (
-          <div className="food-item-counter">
-            <img
-              src={assets.remove_icon_red}
-              onClick={() => removeFromCart(id)}
-              alt=""
-            />
-            <p>{cartItems[id] || 0}</p> {/* Fallback to 0 */}
-            <img
-              src={assets.add_icon_green}
-              onClick={() => addToCart(id)}
-              alt=""
-            />
+
+        {/* Notification popup for added quantity - positioned at bottom of image */}
+        {showNotification && (
+          <div className="add-notification">
+            +{notificationQuantity}
           </div>
         )}
       </div>
+
       <div className="food-item-info">
         <div className="food-item-name-rating">
-          <p>{name}</p> <img src={assets.rating_starts} alt="" />
+          <p>{name}</p>
+          <img src={assets.rating_starts} alt="rating" />
         </div>
+
         <p className="food-item-desc">{desc}</p>
+
         <p className="food-item-price">
           {currency}
           {price}
         </p>
+
+        {/* Buttons container for side-by-side layout */}
+        <div className="buttons-container">
+          <button
+            className="add-to-cart-btn"
+            onClick={handleAddToCart}
+          >
+            Add to Cart
+          </button>
+          <button
+            className="buy-now-btn"
+            onClick={handleBuyNow}
+          >
+            Buy Now
+          </button>
+        </div>
       </div>
     </div>
   );

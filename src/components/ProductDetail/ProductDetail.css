@@ -1,0 +1,108 @@
+.product-detail {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+  color: #333;
+  font-family: "Inter", sans-serif;
+}
+
+.detail-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+
+.detail-image {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.detail-info {
+  flex: 1;
+}
+
+.product-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.product-brand {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 6px;
+}
+
+.product-desc {
+  font-size: 13px;
+  color: #555;
+}
+
+.size-heading {
+  margin-top: 18px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.size-list {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.size-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.size-row:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.size-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.size-label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.price-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.price {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 13px;
+}
+
+.discount-tag {
+  background: #ff9800;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 6px

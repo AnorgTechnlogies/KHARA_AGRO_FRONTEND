@@ -51,9 +51,10 @@ const PlaceOrder = () => {
             if (response.data.success) {
                 const { session_url } = response.data;
                 window.location.replace(session_url);
+                
             }
             else {
-                toast.error("Something Went Wrong")
+                toast.error("Something Went Wrong ")
             }
         }
         else{
@@ -64,7 +65,7 @@ const PlaceOrder = () => {
                 setCartItems({});
             }
             else {
-                toast.error("Something Went Wrong")
+                toast.error("Please signin first")
             }
         }
 

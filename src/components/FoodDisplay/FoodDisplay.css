@@ -12,7 +12,20 @@
     margin-top: 30px;
     gap: 30px;
     row-gap: 50px;
+  
 }
+.food-item-desc {
+  /* overflow: hidden; */
+  display: -webkit-box;
+  -webkit-line-clamp: 5; /* Show only 2 lines */
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  color: #555;
+  overflow: auto;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 
 .HR{
     margin: 10px 0px;

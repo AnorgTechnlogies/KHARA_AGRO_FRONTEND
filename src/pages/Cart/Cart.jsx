@@ -6,15 +6,23 @@ import { useNavigate } from 'react-router-dom';
 const Cart = () => {
   const {
     cartItems,
-    food_list = [], // fallback to empty array
+    food_list = [],
+    addToCart,
     removeFromCart,
     getTotalCartAmount,
     url,
     currency,
-    deliveryCharge
+    deliveryCharge,
+    setCartItems // optional, only if you have a setter in context
   } = useContext(StoreContext);
 
   const navigate = useNavigate();
+
+  const handleDecrement = (id) => {
+    if (cartItems[id] > 1) {
+      removeFromCart(id);
+    }
+  };
 
   return (
     <div className='cart'>
@@ -39,9 +47,32 @@ const Cart = () => {
                     <img src={`${url}/images/${item.image}`} alt={item.name} />
                     <p>{item.name}</p>
                     <p>{currency}{item.price}</p>
-                    <div>{cartItems[item._id]}</div>
+
+                    {/* ✅ Quantity control */}
+                    <div className="cart-quantity-control">
+                      <button
+                        className="qty-btn"
+                        onClick={() => handleDecrement(item._id)}
+                        disabled={cartItems[item._id] === 1} // disable when quantity = 1
+                      >
+                        −
+                      </button>
+                      <span>{cartItems[item._id]}</span>
+                      <button
+                        className="qty-btn"
+                        onClick={() => addToCart(item._id)}
+                      >
+                        +
+                      </button>
+                    </div>
+
                     <p>{currency}{item.price * cartItems[item._id]}</p>
-                    <p className='cart-items-remove-icon' onClick={() => removeFromCart(item._id)}>x</p>
+                    <p
+                      className='cart-items-remove-icon'
+                      onClick={() => removeFromCart(item._id)}
+                    >
+                      x
+                    </p>
                   </div>
                   <hr />
                 </div>

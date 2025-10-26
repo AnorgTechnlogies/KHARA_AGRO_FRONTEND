@@ -98,6 +98,36 @@
     border-radius: 4px;
 }
 
+.cart-quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.qty-btn {
+  /* background-color: #ff6b6b; */
+  border: none;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  /* width: 30px;
+  height: 30px; */
+  /* border-radius: 5px; */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.qty-btn:hover {
+  background-color: #ff4d4d;
+}
+
+.cart-items-item span {
+  width: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+
 @media(max-width:750px) {
     .cart-bottom {
         flex-direction: column-reverse;
