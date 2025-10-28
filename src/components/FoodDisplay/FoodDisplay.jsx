@@ -23,6 +23,7 @@ const FoodDisplay = ({category }) => {
                 image={item.image}
                 name={item.name}
                 desc={item.description}
+                kg={item.kg}
                 price={item.price}
                 id={item._id}
               />

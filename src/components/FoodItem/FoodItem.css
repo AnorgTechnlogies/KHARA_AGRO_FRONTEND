@@ -1,25 +1,24 @@
-/* FoodItem.css */
+/* 🌿 FoodItem.css — modern and clean card UI */
 
-/* Main food item container */
 .food-item {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  max-width: 300px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 320px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .food-item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
-/* Image container */
+/* 🍽️ Image section */
 .food-item-img-container {
   position: relative;
   width: 100%;
@@ -31,62 +30,47 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
-/* Notification for added quantity - continuous display */
+.food-item:hover .food-item-image {
+  transform: scale(1.05);
+}
+
+/* 🔔 Notification badge */
 .add-notification {
   position: absolute;
-  bottom: 8px;
-  right: 8px;
-  background: #f51400;
+  bottom: 10px;
+  right: 10px;
+  background: linear-gradient(135deg, #f43f5e, #e11d48);
   color: white;
-  padding: 4px 8px;
+  padding: 6px 10px;
   border-radius: 12px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: bold;
-  /* Animation commented out for continuous display without re-triggering */
-  /* animation: bounceIn 0.3s ease-out; */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
 }
 
-@keyframes bounceIn {
-  0% {
-    transform: scale(0.3);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  70% {
-    transform: scale(0.9);
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-/* Food item info section */
+/* 🧾 Info section */
 .food-item-info {
-  padding: 16px;
+  padding: 18px 16px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex-grow: 1;
+  gap: 8px;
 }
 
+/* ⭐ Name and rating */
 .food-item-name-rating {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
 }
 
 .food-item-name-rating p {
   font-size: 18px;
   font-weight: 600;
-  color: #333;
+  color: #1f2937;
   margin: 0;
 }
 
@@ -95,24 +79,50 @@
   height: auto;
 }
 
+/* 🧂 Description */
 .food-item-desc {
   font-size: 14px;
-  color: #666;
-  line-height: 1.4;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+/* 💰 Price & ⚖️ Weight container */
+.food-item-price-kg {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-top: 8px;
   margin-bottom: 12px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
+/* Price styling */
 .food-item-price {
-  font-size: 20px;
-  font-weight: bold;
-  color: #fc055f;
-  margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #e11d48;
+  margin: 0;
 }
 
-/* Buttons container */
+/* KG styling - chip style */
+.food-item-kg {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  background: #eef2ff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+
+/* 🛒 Buttons */
 .buttons-container {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   margin-top: 10px;
 }
 
@@ -121,32 +131,34 @@
   flex: 1;
   padding: 10px 16px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.25s ease;
 }
 
 .add-to-cart-btn {
-  background: #2196F3;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
   color: white;
 }
 
 .add-to-cart-btn:hover {
-  background: #1976D2;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  transform: translateY(-1px);
 }
 
 .buy-now-btn {
-  background: #FF9800;
+  background: linear-gradient(135deg, #f59e0b, #d97706);
   color: white;
 }
 
 .buy-now-btn:hover {
-  background: #F57C00;
+  background: linear-gradient(135deg, #d97706, #b45309);
+  transform: translateY(-1px);
 }
 
-/* Responsive adjustments */
+/* 📱 Responsive */
 @media (max-width: 768px) {
   .food-item {
     max-width: 100%;

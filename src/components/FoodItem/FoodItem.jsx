@@ -4,7 +4,7 @@ import { assets } from "../../assets/assets";
 import { StoreContext } from "../../Context/StoreContext";
 import { useNavigate } from "react-router-dom";
 
-const FoodItem = ({ image, name, price, desc, id }) => {
+const FoodItem = ({ image, name, price, desc, id, kg }) => {
   const { addToCart, url, currency } = useContext(StoreContext);
   const navigate = useNavigate();
   const [showNotification, setShowNotification] = useState(false);
@@ -15,12 +15,12 @@ const FoodItem = ({ image, name, price, desc, id }) => {
     const newQuantity = notificationQuantity + 1;
     setNotificationQuantity(newQuantity);
     setShowNotification(true);
-    // Removed setTimeout to keep notification visible continuously
+    // Keeping the notification visible continuously (no timeout)
   };
 
   const handleBuyNow = () => {
-    addToCart(id);       // Add item to cart
-    navigate("/cart");   // Redirect to cart page
+    addToCart(id); // Add item to cart
+    navigate("/cart"); // Redirect to cart page
   };
 
   return (
@@ -28,15 +28,13 @@ const FoodItem = ({ image, name, price, desc, id }) => {
       <div className="food-item-img-container">
         <img
           className="food-item-image"
-          src={url + "/images/" + image}
+          src={`${url}/images/${image}`}
           alt={name}
         />
 
-        {/* Notification popup for added quantity - positioned at bottom of image */}
+        {/* Notification popup for added quantity */}
         {showNotification && (
-          <div className="add-notification">
-            +{notificationQuantity}
-          </div>
+          <div className="add-notification">+{notificationQuantity}</div>
         )}
       </div>
 
@@ -48,23 +46,20 @@ const FoodItem = ({ image, name, price, desc, id }) => {
 
         <p className="food-item-desc">{desc}</p>
 
-        <p className="food-item-price">
-          {currency}
-          {price}
-        </p>
+        <div className="food-item-price-kg">
+          <p className="food-item-price">
+            {currency}
+            {price}
+          </p>
+          {kg && <p className="food-item-kg">{kg} kg</p>}
+        </div>
 
         {/* Buttons container for side-by-side layout */}
         <div className="buttons-container">
-          <button
-            className="add-to-cart-btn"
-            onClick={handleAddToCart}
-          >
+          <button className="add-to-cart-btn" onClick={handleAddToCart}>
             Add to Cart
           </button>
-          <button
-            className="buy-now-btn"
-            onClick={handleBuyNow}
-          >
+          <button className="buy-now-btn" onClick={handleBuyNow}>
             Buy Now
           </button>
         </div>
