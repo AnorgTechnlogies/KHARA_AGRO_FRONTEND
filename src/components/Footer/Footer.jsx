@@ -7,7 +7,7 @@ import { MapPin, Phone, Mail } from "lucide-react";
 const Footer = () => {
   return (
     <div className="footer" id="footer">
-      <div className="footer-content">
+      <div className="footer-content">           
         {/* Left Section */}
         <div className="footer-content-left">
           <div className="FooterLogoDiv">
