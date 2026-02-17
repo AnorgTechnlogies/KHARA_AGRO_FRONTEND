@@ -1,6 +1,6 @@
 // ContactUs.jsx
 import React, { useState, useEffect } from "react";
-import { MapPin, Phone, Mail, Clock, Send, AlertCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Send, AlertCircle, CheckCircle } from "lucide-react";
 import "./ContactUs.css";
 
 const ContactUs = () => {
@@ -57,6 +57,11 @@ const ContactUs = () => {
         subject: "",
         message: "",
       });
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => {
+        setFormState((prev) => ({ ...prev, isSubmitted: false }));
+      }, 5000);
     } catch (error) {
       setFormState((prev) => ({
         ...prev,
@@ -83,48 +88,72 @@ const ContactUs = () => {
   };
 
   return (
-    <div className={`contact-page ${isVisible ? "visible" : ""}`}>
-      {/* Hero Banner */}
+    <div className={`makhana-contact-page ${isVisible ? "visible" : ""}`}>
+      {/* Hero Banner - Image preserved as is */}
       <div className="contact-banner">
         <div className="banner-overlay"></div>
         <div className="banner-content">
-          {/* <h1>Get in Touch</h1>
-          <p>We're here to help and answer any question you might have</p> */}
+          {/* Banner content is empty as per your requirement */}
         </div>
       </div>
 
-      {/* Contact Info Cards */}
+      {/* Floating Stats */}
+      <div className="floating-stats">
+        <div className="stat-bubble">
+          <span className="stat-bubble-number">24/7</span>
+          <span className="stat-bubble-label">Support</span>
+        </div>
+        <div className="stat-bubble">
+          <span className="stat-bubble-number">500+</span>
+          <span className="stat-bubble-label">Happy Clients</span>
+        </div>
+        <div className="stat-bubble">
+          <span className="stat-bubble-number">100%</span>
+          <span className="stat-bubble-label">Satisfaction</span>
+        </div>
+      </div>
+
+      {/* Contact Info Cards - Modern Design */}
       <div className="contact-info-container">
         {[
           {
             icon: <MapPin className="contact-icon" />,
-            title: "Our Location",
+            title: "Visit Our Farm",
             lines: [
-              "Ramchandra Bada, Infront of Grampanchayat, Village Khara, Tehsil Kirnapur, District Balaghat (MP), INDIA, Pin 481226",
+              "Ramchandra Bada, Infront of Grampanchayat",
+              "Village Khara, Tehsil Kirnapur",
+              "District Balaghat (MP), INDIA - 481226",
             ],
+            gradient: "linear-gradient(135deg, #E63946, #FF8C42)"
           },
           {
             icon: <Phone className="contact-icon" />,
-            title: "Phone Number",
-            lines: ["+91 9174207069"],
+            title: "Call Us Anytime",
+            lines: ["+91 91742 07069", "+91 80098 00980"],
+            gradient: "linear-gradient(135deg, #FF8C42, #E63946)"
           },
           {
             icon: <Mail className="contact-icon" />,
-            title: "Email Address",
-            lines: ["kharaagrotech@gmail.com"],
+            title: "Email Us",
+            lines: ["makhanahouse@gmail.com", "support@makhanahouse.com"],
+            gradient: "linear-gradient(135deg, #E63946, #FF8C42)"
           },
           {
             icon: <Clock className="contact-icon" />,
             title: "Working Hours",
-            lines: ["24*7 Hour's Available"],
+            lines: ["24/7 Customer Support", "Orders processed daily"],
+            gradient: "linear-gradient(135deg, #FF8C42, #E63946)"
           },
         ].map((card, index) => (
           <div
             key={index}
-            className="contact-card"
+            className="modern-contact-card"
             style={{ animationDelay: `${index * 0.1}s` }}
           >
-            <div className="icon-wrapper">{card.icon}</div>
+            <div className="card-glow"></div>
+            <div className="icon-wrapper" style={{ background: card.gradient }}>
+              {card.icon}
+            </div>
             <h3>{card.title}</h3>
             {card.lines.map((line, i) => (
               <p key={i}>{line}</p>
@@ -133,122 +162,109 @@ const ContactUs = () => {
         ))}
       </div>
 
-      {/* Contact Form Section */}
-      <div className="contact-form-container">
-        <div className="form-content">
+      {/* Main Content Grid */}
+      <div className="contact-grid-container">
+        {/* Form Section */}
+        <div className="form-wrapper">
           <div className="form-header">
-            <h2>Send us a Message</h2>
-            <p>Fill out the form below and we'll get back to you shortly</p>
+            <span className="form-badge">Get In Touch</span>
+            <h2>We'd Love to <span className="gradient-text">Hear From You</span></h2>
+            <p>Have questions about our makhana products? We're here to help!</p>
           </div>
 
           {formState.isSubmitted ? (
-            <div className="success-message">
-              <svg viewBox="0 0 24 24" className="success-icon">
-                <path d="M20 6L9 17l-5-5"></path>
-              </svg>
-              Message sent successfully! We'll get back to you soon.
+            <div className="success-animation">
+              <div className="success-checkmark">
+                <CheckCircle size={48} />
+              </div>
+              <h3>Message Sent!</h3>
+              <p>Thank you for reaching out. We'll get back to you within 24 hours.</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="contact-form">
-              <div className="form-row">
-                <div
-                  className={`form-group ${
-                    formState.errors.name ? "error" : ""
-                  }`}
-                >
+            <form onSubmit={handleSubmit} className="modern-form">
+              <div className="form-grid">
+                <div className={`form-group ${formState.errors.name ? "error" : ""}`}>
                   <input
                     type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="Your Name"
-                    className="input-field"
+                    placeholder="Your Full Name"
+                    className="form-input"
                   />
                   {formState.errors.name && (
-                    <div className="error-message">
-                      <AlertCircle size={16} />
+                    <div className="error-tooltip">
+                      <AlertCircle size={14} />
                       {formState.errors.name}
                     </div>
                   )}
                 </div>
-                <div
-                  className={`form-group ${
-                    formState.errors.email ? "error" : ""
-                  }`}
-                >
+
+                <div className={`form-group ${formState.errors.email ? "error" : ""}`}>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="Your Email"
-                    className="input-field"
+                    placeholder="Email Address"
+                    className="form-input"
                   />
                   {formState.errors.email && (
-                    <div className="error-message">
-                      <AlertCircle size={16} />
+                    <div className="error-tooltip">
+                      <AlertCircle size={14} />
                       {formState.errors.email}
                     </div>
                   )}
                 </div>
-              </div>
 
-              <div className="form-row">
-                <div
-                  className={`form-group ${
-                    formState.errors.phone ? "error" : ""
-                  }`}
-                >
+                <div className={`form-group ${formState.errors.phone ? "error" : ""}`}>
                   <input
                     type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="Your Phone"
-                    className="input-field"
+                    placeholder="Phone Number"
+                    className="form-input"
                   />
                   {formState.errors.phone && (
-                    <div className="error-message">
-                      <AlertCircle size={16} />
+                    <div className="error-tooltip">
+                      <AlertCircle size={14} />
                       {formState.errors.phone}
                     </div>
                   )}
                 </div>
+
                 <div className="form-group">
                   <input
                     type="text"
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    placeholder="Subject"
-                    className="input-field"
+                    placeholder="Subject (Optional)"
+                    className="form-input"
                   />
                 </div>
               </div>
 
-              <div
-                className={`form-group ${
-                  formState.errors.message ? "error" : ""
-                }`}
-              >
+              <div className={`form-group full-width ${formState.errors.message ? "error" : ""}`}>
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Your Message"
-                  rows="6"
-                  className="input-field"
+                  placeholder="Tell us about your inquiry..."
+                  rows="5"
+                  className="form-textarea"
                 ></textarea>
                 {formState.errors.message && (
-                  <div className="error-message">
-                    <AlertCircle size={16} />
+                  <div className="error-tooltip">
+                    <AlertCircle size={14} />
                     {formState.errors.message}
                   </div>
                 )}
               </div>
 
               {formState.errors.submit && (
-                <div className="error-message submit-error">
+                <div className="submit-error">
                   <AlertCircle size={16} />
                   {formState.errors.submit}
                 </div>
@@ -256,38 +272,66 @@ const ContactUs = () => {
 
               <button
                 type="submit"
-                className={`submit-button ${
-                  formState.isSubmitting ? "submitting" : ""
-                }`}
+                className={`modern-submit-btn ${formState.isSubmitting ? "submitting" : ""}`}
                 disabled={formState.isSubmitting}
               >
-                <span className="button-content">
-                  {formState.isSubmitting ? (
-                    <>
-                      <span className="loading-spinner"></span>
-                      <span>Sending...</span>
-                    </>
-                  ) : (
-                    <>
-                      <span>Send Message</span>
-                      <Send className="send-icon" size={18} />
-                    </>
-                  )}
-                </span>
+                {formState.isSubmitting ? (
+                  <>
+                    <span className="btn-spinner"></span>
+                    <span>Sending...</span>
+                  </>
+                ) : (
+                  <>
+                    <span>Send Message</span>
+                    <Send className="btn-icon" size={18} />
+                  </>
+                )}
               </button>
             </form>
           )}
         </div>
 
         {/* Map Section */}
-        <div className="map-container">
-          <iframe
-            className="map-frame"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29662.95144675069!2d80.17153590481121!3d21.668955452531485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a2a5167501e9d7d%3A0xa0bc4f505d654de5!2sKhara%2C%20Madhya%20Pradesh%20481226!5e0!3m2!1sen!2sin!4v1737529814015!5m2!1sen!2sin"
-            allowFullScreen=""
-            loading="lazy"
-            title="Location Map"
-          ></iframe>
+        <div className="map-wrapper">
+          <div className="map-header">
+            <h3>Visit Our <span className="gradient-text">Location</span></h3>
+            <p>Come visit our farm and experience the freshness</p>
+          </div>
+          <div className="map-container">
+            <iframe
+              className="modern-map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29662.95144675069!2d80.17153590481121!3d21.668955452531485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a2a5167501e9d7d%3A0xa0bc4f505d654de5!2sKhara%2C%20Madhya%20Pradesh%20481226!5e0!3m2!1sen!2sin!4v1737529814015!5m2!1sen!2sin"
+              allowFullScreen=""
+              loading="lazy"
+              title="Makhana House Location"
+            ></iframe>
+          </div>
+          
+          {/* Quick Info Tags */}
+          <div className="location-tags">
+            <span className="location-tag">🚚 Free Shipping</span>
+            <span className="location-tag">🌿 Organic Farm</span>
+            <span className="location-tag">⭐ 5 Star Service</span>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQ Preview Section */}
+      <div className="faq-preview">
+        <h3>Quick <span className="gradient-text">Answers</span></h3>
+        <div className="faq-grid">
+          <div className="faq-item">
+            <h4>What are your delivery charges?</h4>
+            <p>Free delivery on orders above ₹500</p>
+          </div>
+          <div className="faq-item">
+            <h4>Do you ship internationally?</h4>
+            <p>Currently shipping across India only</p>
+          </div>
+          <div className="faq-item">
+            <h4>How do I track my order?</h4>
+            <p>You'll receive tracking info via SMS/Email</p>
+          </div>
         </div>
       </div>
     </div>

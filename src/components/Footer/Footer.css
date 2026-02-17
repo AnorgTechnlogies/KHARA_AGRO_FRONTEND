@@ -1,173 +1,510 @@
-.footer {
-  color: #d9d9d9;
-  background-color: #323232;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 60px 8vw 20px;
-  font-family: "Poppins", sans-serif;
-}
+/* Footer.css - Modern Makhana Edition */
 
-/* ----- Top Section Layout ----- */
-.footer-content {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 60px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
-.footer-content-left,
-.footer-content-right {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  line-height: 1.6;
-}
-
-/* ----- Logo Section ----- */
-.FooterLogoDiv {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-}
-
-.Footerlogo {
-  width: 180px;
-  margin-bottom: 10px;
-}
-
-.navbar-p {
-  font-size: 14px;
-  color: #a6e18d;
-  margin-bottom: 20px;
-}
-
-/* ----- Titles ----- */
-.footer-content h2 {
-  color: #fff;
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 10px;
+.makhana-footer {
+  font-family: 'Inter', sans-serif;
   position: relative;
+  background: linear-gradient(135deg, #1a2a2f 0%, #1e3535 100%);
+  color: #e8e8e8;
+  margin-top: 4rem;
+  overflow-x: hidden;
 }
 
-/* Optional underline effect */
-.footer-content h2::after {
-  content: "";
-  display: block;
-  width: 40px;
-  height: 2px;
-  background: #82ae46;
-  margin-top: 6px;
-  border-radius: 2px;
+/* Main Container */
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 2rem 2rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.2fr 1.3fr;
+  gap: 2.5rem;
+  position: relative;
+  z-index: 2;
 }
 
-/* ----- Contact Section ----- */
-.footer-content-right ul {
-  padding: 0;
-}
-
-.footer-content-right ul li {
+/* Brand Section */
+.footer-brand {
   display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 10px;
-  list-style: none;
-  line-height: 1.5;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.footer-content-right ul li svg {
-  min-width: 20px;
-  color: #82ae46;
-  margin-top: 3px;
-}
-
-/* ----- Links and Text ----- */
-.footer a {
-  color: #d9d9d9;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer a:hover {
-  color: #82ae46;
-}
-
-/* ----- Divider Line ----- */
-.footer hr {
-  width: 100%;
-  height: 1px;
-  background: #555;
-  border: none;
-  margin: 40px 0 20px;
-}
-
-/* ----- Social Icons ----- */
-.footer-social-icons {
+.footer-logo-link {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 18px;
-  margin-bottom: 15px;
+  gap: 1rem;
+  text-decoration: none;
+  transition: transform 0.3s ease;
 }
 
-.footer-social-icons img {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  padding: 8px;
-  background: transparent;
-  border: 1px solid #777;
+.footer-logo-link:hover {
+  transform: translateX(5px);
+}
+
+.footer-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.footer-logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-brand-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #FF8C42, #E63946);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+.footer-tagline {
+  font-size: 0.8rem;
+  color: #a0c0b0;
+  letter-spacing: 0.5px;
+}
+
+.footer-description {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #b8d0c5;
+  margin: 0;
+}
+
+/* Trust Badges */
+.trust-badges {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.4rem 0.8rem;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  color: #d4e8dd;
+  border: 1px solid rgba(255, 140, 66, 0.2);
   transition: all 0.3s ease;
 }
 
-.footer-social-icons img:hover {
-  border-color: #82ae46;
+.trust-badge:hover {
+  background: rgba(230, 57, 70, 0.15);
+  border-color: #E63946;
+  transform: translateY(-2px);
+}
+
+.trust-badge svg {
+  color: #FF8C42;
+}
+
+/* Footer Titles */
+.footer-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #E63946, #FF8C42);
+  border-radius: 3px;
+}
+
+/* Quick Links */
+.footer-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-menu li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-menu li a {
+  color: #b8d0c5;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+}
+
+.footer-menu li a::before {
+  content: '→';
+  position: absolute;
+  left: -20px;
+  opacity: 0;
+  transition: all 0.3s ease;
+  color: #FF8C42;
+}
+
+.footer-menu li a:hover {
+  color: #fff;
+  transform: translateX(20px);
+}
+
+.footer-menu li a:hover::before {
+  opacity: 1;
+  left: -15px;
+}
+
+/* Contact List */
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-list li {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-icon {
+  min-width: 36px;
+  height: 36px;
+  background: rgba(230, 57, 70, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FF8C42;
+  transition: all 0.3s ease;
+}
+
+.contact-list li:hover .contact-icon {
+  background: #E63946;
+  color: #fff;
   transform: scale(1.1);
 }
 
-/* ----- Copyright ----- */
-.footer-copyright {
-  text-align: center;
-  font-size: 14px;
-  color: #ccc;
-  margin-top: 10px;
+.contact-detail {
+  display: flex;
+  flex-direction: column;
 }
 
-.CopyRightKharaAgroTech {
-  color: #82ae46;
+.contact-detail strong {
+  color: #fff;
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+}
+
+.contact-detail span {
+  color: #b8d0c5;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Newsletter Section */
+.newsletter-text {
+  color: #b8d0c5;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: 0.8rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 40px;
+  color: #fff;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: #E63946;
+  background: rgba(230, 57, 70, 0.1);
+}
+
+.newsletter-input::placeholder {
+  color: #889e94;
+}
+
+.newsletter-btn {
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, #E63946, #FF8C42);
+  color: white;
+  border: none;
+  border-radius: 40px;
+  font-size: 0.9rem;
   font-weight: 600;
-  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
-.CopyRightKharaAgroTech:hover {
+.newsletter-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
+}
+
+/* Social Links */
+.social-icons {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.social-icon {
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.social-icon img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  filter: brightness(0.8);
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+}
+
+.social-icon:hover img {
+  background: #E63946;
+  border-color: #E63946;
+  filter: brightness(1);
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1.5rem 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bottom-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.copyright {
+  color: #a0c0b0;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.bottom-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.bottom-links a {
+  color: #b8d0c5;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.bottom-links a:hover {
+  color: #E63946;
+}
+
+.separator {
+  color: #4a6a60;
+}
+
+.credit {
+  color: #a0c0b0;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.credit-link {
+  color: #FF8C42;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.credit-link:hover {
+  color: #E63946;
   text-decoration: underline;
 }
 
-/* ----- Responsive Design ----- */
-@media (max-width: 900px) {
-  .footer-content {
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #E63946, #FF8C42);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 100;
+  box-shadow: 0 5px 20px rgba(230, 57, 70, 0.3);
+}
+
+.makhana-footer:hover .back-to-top {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(230, 57, 70, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 2.5rem;
+    padding: 3rem 1.5rem 1.5rem;
+  }
+
+  .footer-brand {
     text-align: center;
   }
 
-  .FooterLogoDiv {
-    align-items: center;
+  .footer-logo-link {
+    justify-content: center;
+  }
+
+  .trust-badges {
+    justify-content: center;
+  }
+
+  .footer-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .footer-title {
     text-align: center;
   }
 
-  .footer-content-right ul li {
-    justify-content: center;
-    text-align: left;
+  .footer-menu li a:hover {
+    transform: translateX(10px);
   }
 
-  .footer-social-icons {
+  .contact-list li {
     justify-content: center;
   }
 
-  .footer hr {
-    margin: 30px 0 10px;
+  .newsletter-form {
+    max-width: 400px;
+    margin: 0 auto 2rem;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .bottom-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.8rem;
+  }
+
+  .bottom-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .back-to-top {
+    bottom: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 2rem 1rem 1rem;
+  }
+
+  .footer-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .footer-brand-name {
+    font-size: 1.2rem;
+  }
+
+  .trust-badge {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-btn {
+    width: 100%;
+  }
+
+  .bottom-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .separator {
+    display: none;
   }
 }

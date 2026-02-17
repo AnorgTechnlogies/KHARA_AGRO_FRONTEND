@@ -1,10 +1,13 @@
-.login-popup{
-    position: absolute;
-    z-index: 1;
+.login-popup {
+    position: fixed;        /* ← was 'absolute', change to 'fixed' */
+    z-index: 1000;          /* ← increase so it sits above navbar */
     width: 100%;
     height: 100%;
+    top: 0;                 /* ← pin to top of viewport */
+    left: 0;                /* ← pin to left of viewport */
     background-color: #00000090;
     display: grid;
+    place-items: center;    /* ← centers the child both horizontally & vertically */
 }
 .login-popup-container{
     place-self: center;
