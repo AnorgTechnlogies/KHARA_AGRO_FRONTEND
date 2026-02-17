@@ -14,7 +14,7 @@ const Footer = () => {
             <Link to="/">
               <img className="Footerlogo" src={assets.logo1} alt="Khara AgroTech Logo" />
             </Link>
-            <p className="navbar-p">उत्तम स्वाद और गुणवत्ता की पहचान</p>
+            <p className="navbar-p">Pure by Nature, Perfect by Taste</p>
           </div>
           <p>
             Ideal for Everyday Dishes: Bhogprada broken rice is a dream come true for busy cooks.
@@ -33,16 +33,16 @@ const Footer = () => {
           <ul>
             <li>
               <MapPin size={20} />
-              RAMCHANDRA BADA, INFRONT OF GRAMPANCHAYAT, Village Khara, Tehsil KIRNAPUR, District
-              Balaghat, MADHYA PRADESH, INDIA, Pin 481226
+              District
+              Balaghat, MADHYA PRADESH, INDIA, Pin 481001
             </li>
             <li>
               <Phone size={20} />
-              +91 9174207069
+              +91 80098009800
             </li>
             <li>
               <Mail size={20} />
-              kharaagrotech@gmail.com
+              makhanahouse@gmail.com
             </li>
           </ul>
         </div>
@@ -79,7 +79,7 @@ const Footer = () => {
           rel="noopener noreferrer"
           className="CopyRightKharaAgroTech"
         >
-          KHARA AGROTECH
+          Makhana House
         </a>
       </p>
     </div>

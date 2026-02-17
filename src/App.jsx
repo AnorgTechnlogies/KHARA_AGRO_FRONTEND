@@ -13,6 +13,10 @@ import Verify from './pages/Verify/Verify'
 import AboutUs from './pages/AboutUs/AboutUs'
 import ContactUs from './pages/ContactUs/ContactUs'
 import ProductDetail from "./components/ProductDetail/ProductDetail"
+import Scroll from "../src/pages/scroll"
+
+// Import new components
+import WaterEffects from './components/WaterEffects/WaterEffects'
 
 
 const App = () => {
@@ -21,6 +25,7 @@ const App = () => {
 
   return (
     <>
+          <WaterEffects />
     <ToastContainer/>
     {showLogin?<LoginPopup setShowLogin={setShowLogin}/>:<></>}
       <div className='app'>
@@ -34,6 +39,7 @@ const App = () => {
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/ContactUs" element={<ContactUs />} />
           <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/scroll-item" element={<Scroll />} />
         </Routes>
       </div>
       <Footer />

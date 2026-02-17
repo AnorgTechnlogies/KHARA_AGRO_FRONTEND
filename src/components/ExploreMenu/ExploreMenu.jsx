@@ -9,22 +9,41 @@ const ExploreMenu = ({ category, setCategory }) => {
     <div className="explore-menu" id="explore-menu">
       <div className="home-discription">
         <h1>
-          Welcome to <span className="red-color">Khara AgroTech</span>
+          Welcome to <span className="red-color">Makhana House</span>
         </h1>
-       <p>
-  <strong>Khara AgroTech</strong> is your trusted <strong>online agro store in India</strong> and the official website for premium <strong>agro products</strong> sourced directly from <strong>Indian farmers</strong>. Based in <strong>Gondia, Maharashtra</strong>, and rooted in the village of <strong>Khara</strong>, Khara AgroTech offers a seamless way to buy fresh, <strong>organic grains and pulses online</strong>. Whether you're searching for <strong>Idli Rice</strong>, <strong>Biryani Rice</strong>, <strong>Chana Dal</strong>, <strong>Urad Dal</strong>, <strong>Besan</strong>, or <strong>Thick Poha</strong>, we guarantee <strong>high-quality products</strong> with hygienic packaging and doorstep delivery at affordable prices.
-
-  Our flagship brand, <strong>Bhogprada</strong>, is known for <strong>purity, tradition, and trust</strong> — offering the <strong>best rice in Balaghat</strong> along with a wide range of authentic agro products across <strong>Maharashtra</strong>. With <strong>24/7 customer support</strong> and a strong focus on quality, Khara AgroTech aims to become <strong>India’s most reliable AgroTech brand</strong>.
-</p>
-
-        <h1>Explore our Food Basket</h1>
-
-        <p className="explore-menu-text">
-          Choose from a diverse menu featuring a delectable array of dishes. Our
-          mission is to satisfy your cravings and elevate your dining
-          experience, one delicious meal at a time.
+        <p>
+          Discover the purity of <span className="makhana-highlight">100% natural Makhana (Fox Nuts)</span>, 
+          sourced directly from organic farms. Our makhanas are gluten-free, low in calories, 
+          and rich in protein, making them the perfect healthy snack for every occasion.
         </p>
+
+        {/* Why Choose Our Makhana Section */}
+        <div className="makhana-benefits">
+          <h2 style={{textAlign: 'center', marginBottom: '15px', color: '#333'}}>
+            Why Choose Our Makhana?
+          </h2>
+          <div className="benefit-list">
+            <span className="benefit-item">🌿 100% Natural</span>
+            <span className="benefit-item">🔥 Low Calorie</span>
+            <span className="benefit-item">💪 High Protein</span>
+            <span className="benefit-item">🌾 Gluten-Free</span>
+            <span className="benefit-item">❤️ Heart Healthy</span>
+            <span className="benefit-item">⚡ Energy Boosting</span>
+          </div>
+        </div>
+
+        {/* Explore Our Makhana Flavors Section */}
+        <div className="flavors-section">
+          <h2>Explore Our Makhana Flavors</h2>
+          <p className="explore-menu-text">
+            Choose from our wide range of <span className="makhana-highlight">expertly crafted makhana flavors</span>. 
+            Each variant is made with premium ingredients and traditional recipes to deliver 
+            authentic taste with health benefits.
+          </p>
+        </div>
       </div>
+
+      {/* Makhana Flavors List */}
       <div className="explore-menu-list">
         {menu_list.map((item, index) => {
           return (
@@ -40,7 +59,7 @@ const ExploreMenu = ({ category, setCategory }) => {
               <img
                 src={item.menu_image}
                 className={category === item.menu_name ? "active" : ""}
-                alt=""
+                alt={item.menu_name}
               />
               <p>{item.menu_name}</p>
             </div>

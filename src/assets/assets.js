@@ -1,6 +1,6 @@
 import basket_icon from './basket_icon.png'
 import logo from './logo.png'
-import logo1 from './logo.jpeg'
+import logo1 from './logo_makhana.jpeg'
 import header_img from './header_img.png'
 import search_icon from './search_icon.png'
 // import menu_1 from './menu_1.png'

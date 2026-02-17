@@ -13,56 +13,217 @@
     background-color: white;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 20px;
     padding: 25px 30px;
     border-radius: 8px;
     font-size: 14px;
     animation: fadeIn 0.5s;
+    max-height: 80vh;
+    overflow-y: auto;
 }
 .login-popup-title{
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: black;
+    margin-bottom: 10px;
 }
 .login-popup-title img{
     width: 16px;
     cursor: pointer;
+    transition: transform 0.2s;
+}
+.login-popup-title img:hover{
+    transform: scale(1.1);
 }
 .login-popup-inputs{
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
 }
 .login-popup-inputs input{
     outline: none;
     border: 1px solid #C9C9C9;
-    padding: 10px;
+    padding: 12px 10px;
     border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+    width: 100%;
+    box-sizing: border-box;
+}
+.login-popup-inputs input:focus{
+    border-color: #FF4C24;
 }
 .login-popup-container button{
     border: none;
-    padding: 10px;
+    padding: 12px;
     border-radius: 4px;
     color: white;
     background-color: #FF4C24;
     font-size: 15px;
     cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    margin-top: 5px;
+}
+.login-popup-container button:hover{
+    background-color: #e04320;
 }
 .login-popup-condition{
     display: flex;
     align-items: start;
     gap: 8px;
-    margin-top: -15px;
-}
-
-.login-popup-condition input{
     margin-top: 5px;
 }
-
-
+.login-popup-condition input{
+    margin-top: 3px;
+    cursor: pointer;
+}
+.login-popup p{
+    margin: 5px 0;
+    text-align: center;
+}
 .login-popup p span{
     color: #FF4C24;
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
+    transition: color 0.3s;
+    padding: 2px 4px;
+}
+.login-popup p span:hover{
+    color: #e04320;
+    text-decoration: underline;
+}
+
+/* Forgot Password Styles */
+.forgot-password-link{
+    text-align: right !important;
+    margin-bottom: 5px !important;
+    font-size: 13px;
+}
+.forgot-password-navigation{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+.forgot-password-navigation p{
+    margin: 0;
+    font-size: 13px;
+}
+.forgot-password-navigation span{
+    color: #FF4C24;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+.forgot-password-navigation span:hover{
+    color: #e04320;
+    text-decoration: underline;
+}
+
+/* Password Input Wrapper */
+.password-input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-toggle-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.password-toggle-icon:hover {
+    opacity: 1;
+}
+
+.password-toggle-icon img {
+    width: 18px;
+    height: 18px;
+}
+
+/* OTP Styles */
+.otp-info {
+    background-color: #f8f8f8;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.otp-info p {
+    margin: 5px 0;
+}
+
+.timer {
+    color: #FF4C24;
+    font-weight: 600;
+}
+
+.timer-expired {
+    color: #ff0000;
+    font-weight: 600;
+}
+
+.otp-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.otp-actions p {
+    margin: 0;
+}
+
+.otp-actions span {
+    color: #FF4C24;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 2px 4px;
+}
+
+.otp-actions span:hover {
+    color: #e04320;
+    text-decoration: underline;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scrollbar styling */
+.login-popup-container::-webkit-scrollbar {
+    width: 6px;
+}
+.login-popup-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+.login-popup-container::-webkit-scrollbar-thumb {
+    background: #FF4C24;
+    border-radius: 10px;
+}
+.login-popup-container::-webkit-scrollbar-thumb:hover {
+    background: #e04320;
 }

@@ -57,7 +57,7 @@ const AboutUs = () => {
           </div>
 
           <div className="content-section">
-            <h2 className="content-title">Welcome to KHARA AGROTECH</h2>
+            <h2 className="content-title">Welcome to Makhana House</h2>
             <div className="content-divider"></div>
 
             <p className="content-text">

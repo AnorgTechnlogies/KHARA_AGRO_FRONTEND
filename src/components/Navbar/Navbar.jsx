@@ -20,7 +20,7 @@ const Navbar = ({ setShowLogin }) => {
     <div className='navbar'>
       <div className='navbar-logoDiv'>
       <Link to='/'><img className='logo' src={assets.logo1} alt="" /></Link>
-      <p className='navbar-p'>उत्तम स्वाद और गुणवत्ता की पहचान</p>
+      <p className='navbar-p'>Pure by Nature, Perfect by Taste</p>
       </div>
 
       <ul className="navbar-menu">

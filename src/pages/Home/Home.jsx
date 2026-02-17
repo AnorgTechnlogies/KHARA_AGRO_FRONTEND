@@ -23,9 +23,9 @@ const Home = () => {
       {/* <AppDownload/> */}
       <BestFeatures />
 
-      <div className="AmazonPage-container">
+      {/* <div className="AmazonPage-container">
         <header className="AmazonPage-header">
-          <h1 className="AmazonPage-title">Welcome to Khara Agrotech</h1>
+          <h1 className="AmazonPage-title">Welcome to Makhana House</h1>
           <p className="AmazonPage-subtitle">
             Quality Agricultural Products Available on Amazon
           </p>
@@ -37,10 +37,10 @@ const Home = () => {
             Shop on Amazon
           </button>
         </header>
-      </div>
+      </div> */}
 
       
-      <ServiceImages />
+      {/* <ServiceImages /> */}
     </>
   );
 };
